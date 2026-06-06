@@ -1,189 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Bahati George James Personal Portfolio</title>
+    <title>Bahati George James | Personal Portfolio</title>
     <link rel="stylesheet" href="../css/profile8.css">
+    <script src="../js/profile8.js" defer></script>
 </head>
-
 <body>
+
     <header class="header">
-
-    <h1>Bahati George James</h1>
-    <h2>About Me</h2>
-    </header>
-<div class="main-container">
-    <p>
-        <div class="left">
-       <strong>My name is Bahati George James.  I'm a first-year student at the University 
-        of Dar es Salaam, pursuing a Bachelor of Science degree in Computer
-        Science. <br>I chose this field because I believe that technology, when guided by
-        people who understand people, has the power to change lives.<br> I want to
-        be one of those people who bridges that gap between code and community. </strong>    
+        <div class="headerContent">
+            <h1>Bahati George James</h1>
+            <h2>About Me</h2>
         </div>
-    </p>
-    <div class="right pic">
-        <img
-            src="../images/bahati.jpeg"
-            alt="Bahati George James  personal profile photo"
-            width="300"
-        >
-    </div>
-    </div>  
-<center>
-   <h2>Skills</h2>
+        <button id="themeToggle" class="btn btnToggle">Dark Mode</button>
+    </header>
 
-    
-<strong>
-        <!-- Main skill 1: Programming -->
-         <div class="skills-container">
-        <li>
+    <main class="mainContainer">
         
-            <div class="skills-programming">
-            Programming
-            <ul>
-                <li>C Programming</li>
-                <li>HTML</li>
-                <li>CSS</li>
-            </ul>
+        <section class="profileIntro">
+            <div class="leftCol">
+                <p class="bioText">
+                    <strong>
+                        My name is Bahati George James. I am a first-year Computer Science student at the University of Dar es Salaam.
+                        I chose this field because I believe technology can change lives when guided by understanding people.
+                    </strong>
+                </p>
             </div>
-        </li>
-    
-
-        <!-- Main skill 2: Social Skills-->
-         
-        <li>
-            <div class="skills-social">
-            Social Skills
-            <ul>   
-                <li>Communication</li>
-                <li>Leadership</li>
-                <li>Teamwork</li>
-            </ul>
+            
+            <div class="rightCol">
+                <img src="../images/bahati profile.jpeg" alt="Bahati Profile Photo" class="lightboxTrigger profileImg">
             </div>
-        </li>
-         </div>
-        
-</strong>
-    
+        </section>
 
-    
-    <!--education background -->
-<br><br>    
-              <h2>Education</h2>
-              <div class="styled-table">
-    <table border="9" cellpadding="8" cellspacing="0">
-   
-        <!-- Header row <th> renders bold text and acts as column titles -->
-        <tr>
-            <th>Level</th>
-            <th>School</th>
-            <th>Year</th>
-        </tr>
+        <hr>
 
-        <!-- Row 1: Most recent University -->
-        <tr>
-            <td>University</td>
-            <td>University of Dar es Salaam  Degree in Computer Science</td>
-            <td>2025 to Date</td>
-        </tr>
+        <section class="skillsSection">
+            <h2 class="sectionTitle">Skills</h2>
+            
+            <div class="skillsGrid">
+                <div class="skillItem">
+                    <h3>Programming</h3>
+                    <div class="skillDetails">
+                        <ul>
+                            <li>C Programming</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <!-- Row 2: Advanced Level (A-Levels) -->
-        <tr>
-            <td>Advanced Level</td>
-            <td>Cornerstone Leadership Academy PCM</td>
-            <td>2023 to 2025</td>
-        </tr>
+                <div class="skillItem">
+                    <h3>Social Skills</h3>
+                    <div class="skillDetails">
+                        <ul>
+                            <li>Communication</li>
+                            <li>Leadership</li>
+                            <li>Teamwork</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Row 3: Ordinary Level (O-Levels) -->
-        <tr>
-            <td>Ordinary Level</td>
-            <td>Canossa High School</td>
-            <td>2019 to 2022</td>
-        </tr>
+        <section class="educationSection">
+            <h2 class="sectionTitle">Education</h2>
+            <div class="tableActions">
+                <button id="sortBtn" class="btn btnSecondary">Sort by Year (Ascending)</button>
+            </div>
+            <div class="tableContainer">
+                <table class="styledTable" id="educationTable">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>School / Institution</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>University</td>
+                            <td>University of Dar es Salaam</td>
+                            <td>2025</td>
+                        </tr>
+                        <tr>
+                            <td>Advanced Level</td>
+                            <td>Cornerstone Leadership Academy PCM</td>
+                            <td>2023</td>
+                        </tr>
+                        <tr>
+                            <td>Ordinary Level</td>
+                            <td>Canossa High School</td>
+                            <td>2019</td>
+                        </tr>
+                        <tr>
+                            <td>Primary Level</td>
+                            <td>Riverside Primary School</td>
+                            <td>2011</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <!-- Row 4: Primary Level where it all started -->
-        <tr>
-            <td>Primary Level</td>
-            <td>Riverside Primary School</td>
-            <td>2011 to 2018</td>
-        </tr>
+        <section class="hobbiesSection">
+            <h2 class="sectionTitle">Hobbies & Interests</h2>
+            
+            <div class="hobbyCard">
+                <h3>Reading</h3>
+                <p class="hobbyText lineClamp">
+                    Dale Carnegie's books like "How to Start Public Speaking" gave me courage and fundamentally changed how I communicate with people. Reading expands my vocabulary and helps me grasp deep interpersonal leadership skills necessary for managing teams and academic governance efficiently.
+                </p>
+                <button class="btnReadMore">Read More</button>
+            </div>
 
-    </table>
-              </div>
-</center>
-    
-<br><br>
-    
-    <h2>Hobbies & Interests</h2>
+            <div class="hobbyCard">
+                <h3>Singing</h3>
+                <p class="hobbyText lineClamp">
+                    Music is something I absolutely love. I sang in a church choir and thoroughly enjoyed helping organize vocal harmonies as a choirmaster. Working with vocal arrangements sharpened my patience, deep listening skills, and ability to build consensus among diverse group members.
+                </p>
+                <button class="btnReadMore">Read More</button>
+            </div>
 
-    <ul>
+            <div class="hobbyCard">
+                <h3>Debating</h3>
+                <p class="hobbyText lineClamp">
+                    I actively competed in national and East African debate championships. This high-pressure environment drastically improved my analytical thinking speed, structured reasoning layout, public presence, and persuasive cross-examination communication skills.
+                </p>
+                <button class="btnReadMore">Read More</button>
+            </div>
 
-        <!-- Hobby 1: Reading -->
-        <li>
-            <strong>Reading</strong>
-            <br>
-            <p>
-                Dale Carnegie's books like <em>How to Start Public
-                Speaking</em> gave me the courage to own a room, and <br><em>How to Win
-                Friends and Influence People</em> completely changed how I listen to
-                and connect with others.
-        </li>
-<br>
-        <!-- Hobby 2: Singing -->
-        <li>
-            <strong>Singing</strong>
-            <p>
-                Music is something that I love. I used to sing in a
-                choir and at high school I had a privilege of serving as a Choirmistress.<br>
-                My work was leading rehearsals and helping to organize harmonies in a choir. <br>
-               
-                
-            </p>
-        </li>
-<br>
-        <!-- Hobby 3: Debating -->
-        <li>
-            <strong>Debating</strong>
-            <p>
-                I have competed at the Tanzania National Debates Championship
-                and the East African Debates Championship, two experiences that
-                tested my ability to think fast,argue clearly.
-            </p>
-        </li>
+            <div class="hobbiesPics">
+                <img src="../images/book.jpeg" alt="Reading Activity" class="lightboxTrigger">
+                <img src="../images/choir.jpeg" alt="Singing Performance" class="lightboxTrigger">
+            </div>
+        </section>
 
-    </ul>
-    <div class="hobbies-pics">
-<img src="../images/bahati2.jpeg" alt="Bahati " width="200">
-<img src="../images/book.jpeg" alt="Book " width="190" >
-<img src="../images/choir.jpeg" alt="sing" width="590" >
+        <section class="linksSection">
+            <h2>My Favourite Links</h2>
+            <p>Come find me on social media platforms:</p>
+            <div class="linksGrid">
+                <a href="https://www.instagram.com/" target="_blank" class="logoLink">
+                    <img src="../images/ig.jpeg" alt="Instagram Logo" class="socialLogoImg">
+                </a>
+                <a href="https://youtube.com/" target="_blank" class="logoLink">
+                    <img src="../images/youtube.jpeg" alt="YouTube Logo" class="socialLogoImg">
+                </a>
+            </div>
+        </section>
+    </main>
 
-</div>
-<br>  
-<h2>My Favourite Links</h2>
-    <p>
-        Come find me on Instagram and youtube; I post about the things I care about:
-        music, debates, books, and everyday life.
-    </p>
-
-
-<div class="links">
-    <!-- favorites links -->
-    <a href="https://www.instagram.com/bahatibairi?igsh=MThnamNnYmJ4b3ZoZg==" target="_blank">
-        
-        <img src="../images/ig.jpeg" alt="Instagram logo" width="50" style="border-radius: 10px;">
-        
-    </a>
-                
-                <!--external links-->
-    <a href="https://youtube.com/shorts/6JDShGLvQTw?si=JzAdGlIdGRSLVhcE" target="_blank">
-    <img src="../images/youtube.jpeg" alt="YouTube logo" width="70" style="border-radius: 10px;"">
-    </a>
-    </div>
-      
+    <button id="scrollTopBtn" title="Go to top">Top</button>
 
 </body>
 </html>

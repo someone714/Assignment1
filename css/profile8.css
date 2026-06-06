@@ -1,133 +1,354 @@
-*{
+/* Color variables and settings */
+:root {
+    --bgPrimary: #f4f6f9;
+    --bgSurface: #fff;
+    --textMain: #002060; 
+    --textMuted: #555;
+    --primaryColor: #002060; 
+    --primaryHover: #00143c;
+    --secondaryColor: #495057;
+    --borderColor: #ccc;
+    --transitionSpeed: 0.3s;
+}
+
+body.darkMode {
+    --bgPrimary: #0a1128;   
+    --bgSurface: #101f42;   
+    --textMain: #fff;    
+    --textMuted: #cbd5e1;
+    --primaryColor: #3b82f6; 
+    --primaryHover: #60a5fa;
+    --borderColor: #1e293b;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: "Segoe UI", sans-serif;
-    background-color: rgb(2, 2, 36);
-    color: whitesmoke;
-    line-height: 1.9;
-    padding: 20px 20px;
-    margin: 20px auto;
-    max-width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bgPrimary);
+    color: var(--textMain);
+    line-height: 1.6;
+    transition: background var(--transitionSpeed), color var(--transitionSpeed);
+}
+
+/* Header layout rules */
+.header {
+    background: var(--bgSurface);
+    padding: 30px 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--primaryColor);
+}
+
+.header h1 {
+    color: var(--primaryColor);
+}
+
+body.darkMode .header h1 {
+    color: var(--textMain);
+}
+
+/* Main content wrapper and spacing */
+.mainContainer {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 15px;
+}
+
+section {
+    margin-bottom: 45px;
+}
+
+.sectionTitle {
+    color: var(--primaryColor);
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+body.darkMode .sectionTitle {
+    color: var(--textMain);
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primaryColor);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--borderColor);
+    margin: 30px 0;
+}
+
+/* Profile introduction grid elements */
+.profileIntro {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.leftCol { 
+    flex: 2; 
+}
+
+.rightCol { 
+    flex: 1; 
+    text-align: center; 
+}
+
+.bioText { 
+    font-size: 1.15rem; 
+    margin-bottom: 20px; 
     text-align: justify;
 }
 
-
-li ul{
-    margin-left: 40px;
-    padding-left :20px;
-    list-style-type: none;
+.profileImg {
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primaryColor);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform var(--transitionSpeed);
 }
-.header{
-    transition:background-color 0.3s ease;
+
+.profileImg:hover { 
+    transform: scale(1.03); 
+}
+
+/* Buttons and interaction design */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transitionSpeed), transform 0.1s;
+}
+
+.btn:active { 
+    transform: scale(0.97); 
+}
+
+.btnPrimary { background: var(--primaryColor); color: #fff; }
+.btnPrimary:hover { background: var(--primaryHover); }
+.btnSecondary { background: var(--secondaryColor); color: #fff; }
+.btnToggle { background: var(--primaryColor); color: #fff; }
+.btnToggle:hover { background: var(--primaryHover); }
+
+/* Skills section and collapsible list */
+.skillsGrid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.skillItem {
+    flex: 1;
+    min-width: 240px;
+    background: var(--bgSurface);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--borderColor);
+    border-top: 3px solid var(--primaryColor);
+    cursor: pointer;
+    transition: transform var(--transitionSpeed), box-shadow var(--transitionSpeed);
+}
+
+.skillItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.07);
+}
+
+.skillItem h3 {
+    color: var(--primaryColor);
+}
+
+body.darkMode .skillItem h3 {
+    color: var(--textMain);
+}
+
+.skillDetails {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out, padding 0.35s ease;
+    padding: 0 15px;
+}
+
+.skillDetails.show {
+    max-height: 180px;
+    padding: 15px 15px 0 15px;
+}
+
+.skillDetails ul { list-style-position: inside; }
+
+/* Tables and educational grid view */
+.tableActions { margin-bottom: 15px; text-align: right; }
+.tableContainer { overflow-x: auto; }
+
+.styledTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bgSurface);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.styledTable th, .styledTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.styledTable th {
+    background: var(--primaryColor);
+    color: #fff;
+}
+
+/* Hobbies block layout structures */
+.hobbyCard {
+    background: var(--bgSurface);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--borderColor);
+}
+
+.hobbyText { margin: 8px 0; text-align: justify; }
+
+.hobbyText.lineClamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btnReadMore {
+    background: none;
+    border: none;
+    color: var(--primaryColor);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.hobbiesPics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.hobbiesPics img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid var(--primaryColor);
+    cursor: pointer;
+    transition: transform var(--transitionSpeed);
+}
+
+.hobbiesPics img:hover { 
+    transform: scale(1.02); 
+}
+
+/* Footer links and external icons */
+.linksGrid { 
+    display: flex; 
+    gap: 20px;       
+    margin-top: 15px;
+    align-items: center;
+}
+
+.logoLink {
+    display: inline-block;
+    transition: transform 0.2s; 
+}
+
+.logoLink:hover {
+    transform: scale(1.06); 
+}
+
+.socialLogoImg {
+    width: 38px;       
+    height: 38px;      
+    object-fit: contain; 
+    border-radius: 4px; 
+}
+
+/* Lightbox pop up container mechanics */
+.lightboxOverlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white;
-    color: rgb(12, 3, 3);
-    padding: 20px;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-
-}
-.header:hover{
-    background-color: rgb(2, 2, 36);
-    color: whitesmoke;
-}
-
-.main-container{
-    
-    margin-top: 90px;
-    align-items: center;
-    padding:20px;
-    display:flex;
-    gap:50px;
-    font-family: 'Arial', cursive ;
-    
-}
-.skills-container{
-
-    list-style-type: none;
-    text-align: center;
-   justify-content: center; 
-    gap: 100px   ;
-    display: flex;
-    flex-wrap:wrap;
-}
-.skills-programming{
-    text-align: center;
-        justify-content: center;
-    padding: 10px;
-    border: 2px solid whitesmoke;
-    
-    border-radius: 20px;
-    flex:1;
-    width: 200px;
-    gap: 100px;
-    background-color: transparent;
-    list-style-type:
-    
-    
-}
-.skills-social{
-    text-align: center;
-    justify-content: center;
-    padding: 10px;
-    border: 2px solid whitesmoke;
-    border-radius: 20px;
-    flex:1;
-    width: 200px;
-    gap:100px;
-    background-color: transparent;
-    
-}
-
-
-.left{
-    flex:1px;
-    width: 700px;
-}
-.right pic{
-    flex:1px;
-    width: 800px;
-}
-.styled-table {
-    
-  width: 100%;
-  border-collapse: collapse;
-  font-family: Arial, sans-serif;
-}
-
-.styled-table th {
-  background-color:white;
-  color: black;
-  padding: 12px;
-  text-align: left;
-}
-
-.styled-table td {
-  padding: 10px;
-  border-bottom: 1px solid black;
-}
-
-.links{
-    display: flex;
-    gap: 5px;
-;
-    align-items: center;
-    margin-top: 20px;
-border-radius: 90px ;
-}
-.hobbies-pics{
-    display: flex;
-
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    z-index: 2000;
+    opacity: 0;
+    animation: fadeIn 0.25s forwards;
 }
 
+.lightboxContent {
+    max-width: 80%;
+    max-height: 75%;
+    border-radius: 4px;
+    transform: scale(0.9);
+    animation: zoomIn 0.25s forwards;
+}
 
+.lightboxClose {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--primaryColor);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes zoomIn { to { transform: scale(1); } }
+
+@media (max-width: 600px) {
+    .profileIntro {
+        flex-direction: column;
+    }
+}
