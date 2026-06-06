@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biography</title>
     <link rel="stylesheet" href="../css/profile2.css">
+    <script src="../js/profile2.js" defer></script>
 </head>
 
 <body>
-    <h1>A LIFE OF CREATIVITY AND INNOVATION</h1>
+    <header class="page-header">
+        <h1>A LIFE OF CREATIVITY AND INNOVATION</h1>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">🌙 Dark Mode</button>
+    </header>
 
-    <img src="../images/chk_photo.png" alt="Passport photo" width="200px" height="200px" >
+    <img src="../images/chk_photo.png" alt="Passport photo" class="profile-photo" width="200px" height="200px">
 
     <h2>Introduction</h2>
     <div class="intro">
@@ -41,57 +45,138 @@
     </p>
     </div>
 
-    <h2>Skills</h2>
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+            <li class="skill-item">
+                <button class="skill-toggle" type="button" data-target="skill-html" aria-expanded="false">Programming skills (React, Flask, Angular)</button>
+                <div id="skill-html" class="skill-details">
+                    <p>Professional web development with a focus on clean user experiences, maintainable code, and scalable architecture.</p>
+                    <ul>
+                        <li>Frontend: React, Angular, HTML, CSS, responsive layouts</li>
+                        <li>Backend: Flask, PHP, REST APIs, database integration</li>
+                        <li>Strengths: usability, accessibility, collaboration, code quality</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="skill-item">
+                <button class="skill-toggle" type="button" data-target="skill-data" aria-expanded="false">Big Data & Data analysis</button>
+                <div id="skill-data" class="skill-details">
+                    <p>Data analysis skills built around real-world datasets, clear visual storytelling, and actionable insights.</p>
+                    <ul>
+                        <li>Tools: Excel, Python data stacks, dashboard design</li>
+                        <li>Focus: transforming raw information into strategic decisions</li>
+                        <li>Approach: accurate reporting, data validation, trend discovery</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="skill-item">
+                <button class="skill-toggle" type="button" data-target="skill-ml" aria-expanded="false">Machine learning</button>
+                <div id="skill-ml" class="skill-details">
+                    <p>Machine learning experience with predictive modeling, classification, and practical AI applications.</p>
+                    <ul>
+                        <li>Concepts: supervised learning, model evaluation, feature engineering</li>
+                        <li>Use cases: recommendations, pattern recognition, automation support</li>
+                        <li>Goal: reliable ML systems that solve real problems carefully and clearly</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="skill-item">
+                <button class="skill-toggle" type="button" data-target="skill-cloud" aria-expanded="false">Cloud Computing</button>
+                <div id="skill-cloud" class="skill-details">
+                    <p>Cloud computing knowledge focused on scalable infrastructure, collaboration, and modern deployment patterns.</p>
+                    <ul>
+                        <li>Platforms: cloud services, storage, and networking fundamentals</li>
+                        <li>Practices: security, resilience, and reliable access management</li>
+                        <li>Value: efficient systems that support teamwork and growth</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
 
-    <div class="skills">
-    <ul>
-        <li>Programming skills i.e HTML, CSS, C & PHP</li>
-        <li>Big Data & Data analysis</li>
-        <li>Machine learning</li>
-        <li>Cloud Computing</li>
-    </ul>
+    <section class="education-section">
+        <div class="table-header-row">
+            <h2>Education Background</h2>
+            <button id="sortYearBtn" class="sort-button" type="button">Sort by Year ▲</button>
+        </div>
+        <table id="educationTable" border="3">
+            <thead>
+                <tr>
+                    <th>LEVEL OF EDUCATION</th>
+                    <th>INSTITUTE OF EDUCATION</th>
+                    <th>YEAR OF STUDIES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-year="2019"><td>Ordinary Level</td><td>Rosmini Secondary School</td><td>2019 - 2022</td></tr>
+                <tr data-year="2023"><td>Advanced Level</td><td>Mzumbe Secondary School</td><td>2023 - 2025</td></tr>
+                <tr data-year="2025"><td>University Education</td><td>University of Dar-es-salaam</td><td>2025 - 2028</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="hobbies">
+        <h2>Hobbies/Interests</h2>
+        <ul class="hobby-list">
+            <li class="hobby-card">
+                <strong>Tourism and adventure</strong>
+                <p class="hobby-text">I love exploring new places, learning from different cultures, and turning travel into creative inspiration and unforgettable memories.</p>
+                <button class="read-more-btn" type="button">Read More</button>
+            </li>
+            <li class="hobby-card">
+                <strong>Drawing and art</strong>
+                <p class="hobby-text">Sketching ideas and designing visuals helps me think creatively, improve my presentation style, and express myself beyond code.</p>
+                <button class="read-more-btn" type="button">Read More</button>
+            </li>
+            <li class="hobby-card">
+                <strong>Listening to music</strong>
+                <p class="hobby-text">Music keeps me motivated during study sessions and gives me a calm way to recharge after a busy day of learning and building projects.</p>
+                <button class="read-more-btn" type="button">Read More</button>
+            </li>
+        </ul>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <figure class="gallery-card">
+                <img src="../images/ML.png" alt="Machine learning concepts" class="gallery-image">
+                <figcaption>Machine learning and analytics</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <img src="../images/coding.png" alt="Coding and programming workspace" class="gallery-image">
+                <figcaption>Modern development workflows</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <img src="../images/data.png" alt="Data analysis dashboard" class="gallery-image">
+                <figcaption>Data visualization and insights</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <img src="../images/cloud.png" alt="Cloud computing and network environment" class="gallery-image">
+                <figcaption>Cloud platforms and collaboration</figcaption>
+            </figure>
+        </div>
+    </section>
+    <button id="scrollTopBtn" class="scroll-top-btn" type="button" aria-label="Scroll to top">↑ Top</button>
+
+    <div id="lightboxOverlay" class="lightbox-overlay" aria-hidden="true">
+        <button id="closeLightbox" class="lightbox-close" type="button" aria-label="Close image">×</button>
+        <img id="lightboxImage" src="" alt="Expanded image preview">
     </div>
 
-    <table border="3">
-        <th colspan="3">
-            EDUCATION BACKGROUND
-        </th>
-        <tr>
-            <td><b>LEVEL OF EDUCATION</b></td>
-            <td><b>INSTITUTE OF EDUCATION</b></td>
-            <td><b>YEAR OF STUDIES</b></td>
-        </tr>
-        <tr>
-            <td>Ordinary Level</td>
-            <td>Rosmini Secondary School</td>
-            <td>2019 - 2022</td>
-        </tr>
-        <tr>
-            <td>Advanced Level</td>
-            <td>Mzumbe Secondary School</td>
-            <td>2023 - 2025</td>
-        </tr>
-        <tr>
-            <td>University Education</td>
-            <td>University of Dar-es-salaam</td>
-            <td>2025 - 2028</td>
-        </tr>
-    </table>
-    <div class="hobbies">
-    <h2>Hobbies/Interests</h2>
-    <ul>
-        <li>Tourism and adventure</li>
-        <li>Drawing and art</li>
-        <li>Listening to music</li>
-    </ul>
-    </div>
     <footer>
-        <p>Copyright &copy; 2026 Christopher Honeywick Kalenge</p>
-    
-    <h3>These're my favourite links</h3>
-            <a href="https://www.databricks.com/"> DataBrick</a><br>
-            <a href="https://www.snowflake.com/en/">Snowflake</a><br>
-            <a href="https://www.tableau.com/">Tableau</a>
+        <div class="footer-grid">
+            <figcaption>
+                <p>Christopher is a computer science student with a growing portfolio in data analysis, machine learning, and cloud-enabled web applications. This site showcases a professional passion for modern engineering and reliable digital experiences.</p>
+        </figcaption>
+            <div class="footer-links">
+                <h3>Favorites</h3>
+                <a href="https://www.databricks.com/" target="_blank" rel="noopener">Databricks</a>
+                <a href="https://www.snowflake.com/en/" target="_blank" rel="noopener">Snowflake</a>
+                <a href="https://www.tableau.com/" target="_blank" rel="noopener">Tableau</a>
+            </div>
+        </div>
     </footer>
 </body>
 

@@ -10,153 +10,149 @@
 
   <header class="navbar" aria-label="Main navigation">
     <nav class="container flex" style="justify-content: space-between;">
-
       <div class="brand" aria-label="Brand">
         <span>PERSONAL INFORMATION</span>
       </div>
-
-      <div class="nav-links">
-        <a href="contact.html" target="_blank" class="btn" style="padding:.5rem 1rem;">Contact</a>
+      
+      <div class="nav-links" style="align-items: center;">
+        <a href="contact.html" target="_blank" class="btn">Contact</a>
+        <button id="toggleTheme">Appearance</button>
       </div>
-
     </nav>
   </header>
+
+  <button id="scrollTop" style="display: none;">Scroll to Top</button>
 
   <section class="hero" id="home" aria-label="Intro">
     <div class="container hero-content">
       <div>
         <h1>BIOGRAPHY</h1>
-        <p align="justify"> Rukia Kanal Senga is a first-year student pursuing a Bachelor of Science in Computer Science at the University of Dar es Salaam (UDSM). She is currently focusing on building 
-       her understanding of web programming and core computing concepts as part of her coursework.
-       As part of her studies, she is working on developing basic web-based projects and gaining 
-       practical experience in designing and creating simple applications. This website is one of
-       the projects she has developed during her learning process. Rukia is continuing to develop
-       her skills step by step as she progresses through her degree program. </p>
+        <p style="text-align: justify;">Rukia Kanal Senga is a first-year student pursuing a Bachelor of Science in Computer Science at the University of Dar es Salaam (UDSM). She is currently focusing on building her understanding of web programming and core computing concepts as part of her coursework. As part of her studies, she is working on developing basic web-based projects and gaining practical experience in designing and creating simple applications. This website is one of the projects she has developed during her learning process. Rukia is continuing to develop her skills step by step as she progresses through her degree program.</p>
       </div>
-      
       <div class="card" aria-label="Intro image placeholder">
         <div style="height:180px; background: linear-gradient(135deg, var(--green-200), var(--green-100)); border-radius: 12px;">
-          <a href="mailto:rukiyasenga16@gmail.com"> <img src="../images/pic.jpg" alt="Profile picture" style="width:100%; height:100%; object-fit:cover; border-radius:12px;"> </a>
+          <a href="mailto:rukiyasenga16@gmail.com">
+            <img id="profilePic" src="../images/pic.jpg" alt="Profile picture" style="width:100%; height:100%; object-fit:cover; border-radius:12px; cursor: pointer;">
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="features" aria-label="Features">
+  <section class="section" id="hobbies" aria-label="Hobbies">
     <div class="container">
       <div class="section-title"><h2>HOBBIES</h2></div>
       <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+        
         <div class="card">
-          <div class="card-header">
-            <strong>Academics</strong>
-          </div>
-          <p>I love learning new languages either its a programming language or other speaking language 
-                like chinese or arabic</p>
+          <div class="card-header"><strong>Academics</strong></div>
+          <p class="hobby-description">I love learning new languages, whether it's a programming language or spoken languages like Chinese or Arabic.</p>
+          <span class="more">Read More</span>
         </div>
+        
         <div class="card">
-          <div class="card-header">
-            <strong>Sports</strong>
-          </div>
-          <p>I like sports like running, cycling, swimming or any form of exercise that tones and keep my body healthy</p>
+          <div class="card-header"><strong>Sports</strong></div>
+          <p class="hobby-description">I like sports like running, cycling, swimming, or any form of exercise that tones and keeps my body healthy.</p>
+          <span class="more">Read More</span>
         </div>
+        
         <div class="card">
-          <div class="card-header">
-            <strong>Adventure</strong>
-          </div>
-          <p>I love travelling to multiple places to experience new life, culture and envision reality in new spaces</p>
+          <div class="card-header"><strong>Adventure</strong></div>
+          <p class="hobby-description">I love traveling to multiple places to experience new cultures and envision reality in new spaces.</p>
+          <span class="more">Read More</span>
         </div>
-
-         <div class="card">
-          <div class="card-header">
-            <strong>Activities</strong>
-          </div>
-          <p>I love cooking a new dish, I like spending time alone, I love star gazing and I also love playing puzzles</p>
+        
+        <div class="card">
+          <div class="card-header"><strong>Activities</strong></div>
+          <p class="hobby-description">I love cooking new dishes, spending time alone, stargazing, and playing puzzles.</p>
+          <span class="more">Read More</span>
         </div>
 
       </div>
     </div>
   </section>
 
-  <section class="section" id="features" aria-label="Features">
+  <section class="section" id="skills" aria-label="Skills">
     <div class="container">
       <div class="section-title"><h2>SKILLS</h2></div>
       <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
-        <div class="card">
+        <div class="card skill-card" style="cursor: pointer;">
           <div class="card-header">
             <strong>Proficiency</strong>
           </div>
-          <p>I can speak basic mandarin chinese (HSK 3, In progress)</p>
+          <p class="details">I can speak basic Mandarin Chinese (HSK 3, In progress).</p>
         </div>
-        <div class="card">
+        <div class="card skill-card" style="cursor: pointer;">
           <div class="card-header">
             <strong>Sports</strong>
           </div>
-          <p>I am athletic as in I can swim, cycle and run</p>
+          <p class="details">I am athletic as in I can swim, cycle, and run.</p>
         </div>
-        <div class="card">
+        <div class="card skill-card" style="cursor: pointer;">
           <div class="card-header">
             <strong>Crafts</strong>
           </div>
-          <p>I can sew various designs of clothes</p>
+          <p class="details">I can sew various designs of clothes.</p>
         </div>
-
-         <div class="card">
+        <div class="card skill-card" style="cursor: pointer;">
           <div class="card-header">
             <strong>Programming</strong>
           </div>
-          <p>I can build simple websites</p>
+          <p class="details">I can build simple websites using HTML, CSS, & JS.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact" aria-label="Contact">
+  <section class="section" id="education" aria-label="Education">
     <div class="container">
       <h2 class="section-title">EDUCATIONAL BACKGROUND</h2>
-
       <table class="edu-table">
+        <thead>
+          <tr>
+            <th>LEVEL</th>
+            <th>SCHOOL</th>
+            <th>YEAR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary School</td>
+            <td>Al-Muntazir Primary School</td>
+            <td>2011 - 2017</td>
+          </tr>
+          <tr>
+            <td>Secondary School</td>
+            <td>Baobab Secondary School</td>
+            <td>2018 - 2021</td>
+          </tr>
+          <tr>
+            <td>College</td>
+            <td>Unique Academy</td>
+            <td>2022 - 2025</td>
+          </tr>
+          <tr>
+            <td>University</td>
+            <td>University of Dar es Salaam</td>
+            <td>2025 - Present</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <div class="links">
+        <h2>MY FAVORITE LINKS</h2>
+        <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+        <a href="https://github.com/login" target="_blank">GitHub</a>
+        <a href="https://coolors.co/" target="_blank">Color Design Website</a>
+      </div>
+    </div>
+  </section>
 
-    <tr>
-        <th>LEVEL</th>
-        <th>SCHOOL</th>
-        <th>YEAR</th>
-    </tr>
-
-    <tr>
-        <td>Primary School</td>
-        <td>Al-Muntazir Primary School</td>
-        <td>2011 - 2017</td>
-    </tr>
-
-    <tr>
-        <td>Secondary School</td>
-        <td>Baobab Secondary School</td>
-        <td>2018 - 2021</td>
-    </tr>
-
-    <tr>
-        <td>College</td>
-        <td>Unique Academy</td>
-        <td>2022 - 2025</td>
-    </tr>
-
-    <tr>
-        <td>University</td>
-        <td>University of Dar es Salaam</td>
-        <td>2025 - Present</td>
-    </tr>
-</table>
-
-<br>
-<div class="links">
-    <h2>MY FAVORITE LINKS</h2>
-
-    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-    <a href="https://github.com/login" target="_blank">GitHub</a>
-    <a href="https://coolors.co/" target="_blank">Color Design Website</a>
-</div>
-
-</div>
-</section>
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightboxImage" src="" alt="Lightbox View">
+  </div>
+  
+  <script src="../js/profile4.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 
     <!--This is the title of the webpage-->
     <title>student portfolio </title>
-    <link rel="stylesheet" href="/css/profile5.css">
+    <link rel="stylesheet" href="../css/profile5.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
@@ -23,35 +23,52 @@
     <a href="#skills">Skills</a>
     <a  href="#Education">Education</a>
     <a href="#Contacts">Contacts</a>
+    </nav>
     </div>
-</nav>
     <!--Personal Information-->
     <section class="hero" >
     <h1><center><b><u>&#9830;MY PERSONAL PORTFOLIO&#9830;</u></b></center></h1>
-    <h1><span> Jackline</span><span> Kadeha</span></h1>
+    <h1><span> Jackline </span> <span> Kadeha</span></h1>
     <p>Computer Science Student at the University of Dar es salaam</p>
     </section>
     <!--My biography-->
-    <div class="card">
+   <div class="bio-card">
     <h2 id="About">BIOGRAPHY</h2>
-    <p align="justify">
-         <h4>My name is Jackline Valentino Kadeha. I am a student at the University of Dar es salaam pursuing a degree in Computer science.I am twenty years old and currenty living in Dar es salaam.
-             I enjoy coding, reading, learning new skills and watching movies.I am always eager to learn new things and skills in life which will help me to be a better person and contribute positively to the society. 
-             I posses different life skills such as communucation skills, problem solving skills, assertiveness, sympathy and empathy which help me to interact well with other people and solve different problems in life.
-              I am a hardworking and dedicated student who is always willing to put in the effort to archieve my goals and succeed in my studies.
-              I am also a team player who enjoys collaborating with others and learning from experiences.I am excited to continue learning diffent skills in computer science and become a technology expert. I  believe that with hardwork, determination and a positive attitude, I can overcome any challenges and archieve my goals in life.
-         </h4></p>
-    </div>
-
+    <p>My name is Jackline Valentino Kadeha. I am a student at the University of Dar es salaam pursuing a degree in Computer Science. I am twenty years old and currently living in Dar es salaam.
+    I enjoy coding, reading, learning new skills and watching movies. I am always eager to learn new things and skills in life which will help me to be a better person and contribute positively to the society.
+    I possess different life skills such as communication skills, problem solving skills, assertiveness, sympathy and empathy which help me to interact well with other people and solve different problems in life.
+    I am a hardworking and dedicated student who is always willing to put in the effort to achieve my goals and succeed in my studies.
+    I am also a team player who enjoys collaborating with others and learning from experiences. I am excited to continue learning different skills in computer science and become a technology expert.</p>
+</div>
     <!--Ordered list of my Skills-->
     <section id ="skills">
    <h2> MY SKILLS</h2>
    <div class="grid">
-        <div class="card">Basic Programming skills</div>
-        <div class="card">Basic skills in web development</div>
-        <div class="card"> Good communication skills</div>
-        <div class="card">Problem solving skills</div>
- </div>
+        <div class="card skill-item">
+            Basic Programming skills
+            <p align="justify" class="skills-details hidden">
+                I have basic programming skiils including understanding variables,functions,conditions,loops  and problem solving techniques.
+                I am able to write programs using programming languages such as C, java, and javascript and apply logical thinking to complete tasks effectively.
+        </div>
+        <div class="card skill-item">
+            Basic skills in web development
+            <p align="justify" class="skills-details hidden">
+                I have basic skills in web development including understanding of HTML, CSS and JavaScript which are the fundamental technologies for building websites.
+                I am able to create simple web pages using HTML for structure, CSS for styling and JavaScript for interactivity. I am also familiar with responsive design principles to ensure that websites are accessible and user-friendly across different devices.
+        </div>
+        <div class="card skill-item"> 
+            Good communication skills
+            <p align="justify" class="skills-details hidden">
+                I have good communication skills which enable me to effectively convey my ideas and thoughts to others. I am able to listen actively and respond appropriately in different situations. 
+                I can communicate clearly and concisely both in writing and verbally, which helps me to collaborate well with others and build strong relationships.
+        </div>
+        <div class="card skill-item">
+            Problem solving skills
+            <p align="justify" class="skills-details hidden">
+                I have strong problem-solving skills which enable me to analyze situations effectively and develop creative solutions. I am able to break down complex problems into smaller, manageable parts and approach them systematically.I am also able to think critically and evaluate different options to make informed decisions. 
+                These skills help me to overcome challenges and achieve my goals in both academic and personal life.
+            </p>
+        </div>
 </section>
       <!--Educational background table-->
       <p><h2 id="Education"><center>A TABLE SHOWING MY EDUCATIONAL BACKGROUND</center></h2></p>
@@ -84,31 +101,56 @@
 <tr>
             <td> UNIVERSITY</td>
             <td> UDSM</td>
-            <td> 2025-present </td>
+            <td> 2028 </td>
         </tr>
     </table>
 
     <!-- Unordered List of My Hobbies-->
-     <div class="card"
-    <h2>MY HOBBIES</h2> 
-       <ul type="disc">
-        <li>Coding-I enjoy writing programs and solving problems using different programming languages.</li>
-        <li>Problem solving- I like solving logical and mathematical problems which help improve my thinking skills.</li>
-        <li>Learning new technologies- I like exploring new tools and teechnologies such as Programming languages and wed development tools to improve my skills.</li>
-        <li>Watching movies- I like watching movies as a way of relaxation and learning new ideas in life which help me to well with my society.</li>
-       </ul>
+  <h2>MY HOBBIES</h2>
+  <div class="hobbies-grid">
+
+    <div class="hobby-card">
+      <strong>Coding</strong>
+      <p>I enjoy writing programs and solving problems using different programming languages. I like to explore new technologies and improve my skills. I believe that coding helps me to think logically and creatively.</p>
     </div>
 
+    <div class="hobby-card">
+      <strong>Problem solving</strong>
+      <p>I like solving logical and mathematical problems which help improve my thinking skills. It helps me to develop critical thinking abilities. I believe that problem solving is an essential skill for success in both academic and professional settings.</p>
+    </div>
+
+    <div class="hobby-card">
+      <strong>Learning new technologies</strong>
+      <p>I like exploring new tools and technologies such as programming languages and web development tools to improve my skills. Staying updated with the latest technologies is crucial for professional growth.</p>
+    </div>
+
+    <div class="hobby-card">
+      <strong>Watching movies</strong>
+      <p>I like watching movies as a way of relaxation and learning new ideas. It allows me to experience different cultures and perspectives.</p>
+    </div>
+
+    <div class="hobby-card">
+      <strong>Math competitions</strong>
+      <p>I enjoy participating in math competitions as they challenge me to apply my knowledge creatively and improve my problem-solving and critical thinking skills.</p>
+    </div>
+  </div>
+</div>
        <!--Images-->
        <p><h2>IMAGES RELATED TO MY HOBBIES</h2></p>
-       <div class="img1-top">
-    <img src="/images/coding image.jpg" alt="Coding activity" height="100" width="100">
-       </div>
+      <div class="images-grid">
+    <div class="image-card">
+        <img src="../images/Math competition image.jpeg" alt="Math competition">
+        <p>Math Competition</p>
+    </div>
+    <div class="image-card">
+        <img src="../images/coding image.jpg" alt="Coding activity">
         <p>Coding</p>
-         <div class="img2-top">
-    <img src="/images/movie image.jpg" alt="Movie watching" height="100" width="100">
-       </div>
-         <p>Watching movies</p>
+    </div>
+    <div class="image-card">
+        <img src="../images/movie image.jpg" alt="Movie watching">
+        <p>Watching Movies</p>
+    </div>
+</div>
     <!-- Unordered List of My Favorite Links-->
     <h2>MY FAVORITE LINKS</h2>
     <div class="bottom-links">
@@ -127,5 +169,6 @@
 </div>
 </center>
 </footer>
+<script src="../js/profile5.js" defer></script>
 </body>
 </html>

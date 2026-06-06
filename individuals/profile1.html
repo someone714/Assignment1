@@ -11,15 +11,16 @@
 
 <body>
 
-    <!-- I , Abubakary Omary, DID NOT USE EVEN A SINGLE AI EITHER FOR REFERENCE,ASSISTANCE OR CODE WRITTING -->
+
     <!-- <h2>THIS IS MY PAGE !</h2>Moving text -->
 
     <!-- Go back home and horizontal line divider -->
     <nav class="nav-bar">
-        <div class="logo"><img src="" alt="Going Home"></div>
+        <div class="logo"><a href="../index.html">🏠</a></div>
         <ul class="nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../individuals/contact.html">Contact</a></li>
+            <li><button id="themeToggle" class="theme-btn">Dark Mode</button></li>
         </ul>
     </nav>
     <!-- <a href="../index.html" target="_blank"> Home </a> -->
@@ -35,81 +36,118 @@
         I currently hold a Diploma in the same field from Arusha Technical College in Arusha along with a CSEE and PLSE
         certiface from Pandahill secondary school and St.Aggrey primary school both located in Mbeya.
     </p>
-    <h3>SKILLS</h3>
-    <!-- Nesting an unordered list in a ordered list -->
-    <ol type="i">
-        <li>Programming</li>
-        <ul>
-            <li>HTML,CSS and JavaScript</li>
-            <li>Java</li>
-            <li>Flutter</li>
-            <li>C/C++</li>
-        </ul>
-        <li>Football (Only at the grassroot level) </li>
 
+
+    <h3>SKILLS</h3>
+    <ol type="i">
+        <li class="skill-item">
+            <strong>Programming</strong> (Click to view languages)
+            <div class="skill-details">
+                <p>I work with a variety of languages and frameworks including:</p>
+                <ul>
+                    <li>HTML, CSS, and JavaScript</li>
+                    <li>Java</li>
+                    <li>Flutter</li>
+                    <li>C/C++</li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="skill-item">
+            <strong>Football</strong> (Click to view details)
+            <div class="skill-details">
+                <p>Only at the grassroots level! I have a deep tactical understanding of the game as a fan, even if my
+                    boots don't always match my vision on the pitch.</p>
+            </div>
+        </li>
     </ol>
+
     <h3>EDUCATION</h3>
-    <table border="1" width=750>
-        <!-- Cant further enhace the table appearance since no CSS is allowed -->
-        <tr>
-            <th colspan="4">ACADEMIC BACKGROUND</th>
-        </tr>
-        <tr>
-            <th>YEAR</th>
-            <th>LEVEL</th>
-            <th>CERTIFICATION</th>
-            <th>SCHOOL</th>
-        </tr>
-        <!-- &nbsp;&nbsp; are for creating spaces around the entries in the cells -->
-        <tr>
-            <td> 2010 - 2017 </td>
-            <td> Primary Education </td>
-            <td> PLSE </td>
-            <td> St.Aggrey Primary School </td>
-        </tr>
-        <tr>
-            <td> 2018 - 2021 </td>
-            <td> Secondary Education </td>
-            <td> CSEE </td>
-            <td> Pandahill Secondary School </td>
-        </tr>
-        <tr>
-            <td> 2021 - 2024 </td>
-            <td> Tertiary/ Higher Education </td>
-            <td> Ordinary Diploma </td>
-            <td> Arusha Technical College </td>
-        </tr>
+
+    <!-- <button id="sortYear">Sort by Year (Ascending)</button> -->
+
+    <table id="academicTable" border="1" width="750">
+        <thead>
+            <tr>
+                <th colspan="4">ACADEMIC BACKGROUND</th>
+            </tr>
+            <tr>
+                <th>YEAR <button id="sortYear">&UpArrowDownArrow;</button>
+                </th>
+                <th>LEVEL</th>
+                <th>CERTIFICATION</th>
+                <th>SCHOOL</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td> 2010 - 2017 </td>
+                <td> Primary Education </td>
+                <td> PLSE </td>
+                <td> St.Aggrey Primary School </td>
+            </tr>
+            <tr>
+                <td> 2025 - 2028 </td>
+                <td> Tertiry Education </td>
+                <td> Bachelor degree </td>
+                <td> University of Dar es salaam </td>
+            </tr>
+            <tr>
+                <td> 2018 - 2021 </td>
+                <td> Secondary Education </td>
+                <td> CSEE </td>
+                <td> Pandahill Secondary School </td>
+            </tr>
+
+            <tr>
+                <td> 2021 - 2024 </td>
+                <td> Tertiary/ Higher Education </td>
+                <td> Ordinary Diploma </td>
+                <td> Arusha Technical College </td>
+            </tr>
+        </tbody>
     </table>
 
     <h3>HOBBIES</h3>
     <ul>
-        <!-- Use unordered since they do not represent my affection toward these hobbies -->
-        <li><u>Football</u>: Watching it. I dont have the minerals to actually play it</li>
-        <li><u>Mindless Scrolling</u>: An addict to Twitter and YouTube </li>
-        <li><u>Reading articles</u>: Not academic unless it's a topic a really like</li>
-
+        <li>
+            <u>Football</u>:
+            <span class="hobby-text clamped">Watching it. I dont have the minerals to actually play it. Plus, watching
+                Pep Guardiola overthink a Champions League lineup is a hobby in itself.mnzxczx zxkjcnkxjznc kjczxjnckjzx
+                zxjncjxzn jzxnjcnzx jnxzjcnzxj.</span>
+            <button class="toggle-hobby-btn">Read More</button>
+        </li>
+        <li>
+            <u>Mindless Scrolling</u>:
+            <span class="hobby-text clamped">An addict to Twitter and YouTube. Spending hours watching video essays
+                about games I will never play or scrolling through football arguments that make no sense lkjdfksn fjdfj
+                jdfnjdnfjd jfbdsjfns kjfbsdjnfj jnfjsdnfjs ndsf.</span>
+            <button class="toggle-hobby-btn">Read More</button>
+        </li>
+        <li>
+            <u>Reading articles</u>:
+            <span class="hobby-text clamped">Not academic unless it's a topic I really like. Give me a deep dive into
+                historical tactical structures or a breakdown of computer architecture design any day ksdjfkjds kjdbjsjk
+                hjdbskhfbdskh kjfkjsdfkjs ksjdbjfdbs jbskjdbf.</span>
+            <button class="toggle-hobby-btn">Read More</button>
+        </li>
     </ul>
+
     <h3>IMAGE SECTION</h3>
     <p>My favourite image of a <strong>GOAT :</strong></p>
-
-    <!-- Image placement of my choice, being that of Kevin de Bruyne -->
 
     <center>
         <div class="image-container">
             <div class="slider">
-                <img src="../images/kdb.jpeg" alt="GOAT-midfielder">
-                <img src="../images/kdb.jpeg" alt="GOAT-midfielder">
-                <img src="../images/peepTheCatalog.jpeg" alt="KDB's trophy catalog">
-                <img src="../images/gyok.jpeg" alt="Gyok 3000">
-
+                <img src="../images/kdb.jpeg" alt="GOAT-midfielder" class="lightbox-trigger">
+                <img src="../images/kdb.jpeg" alt="GOAT-midfielder" class="lightbox-trigger">
+                <img src="../images/peepTheCatalog.jpeg" alt="KDB's trophy catalog" class="lightbox-trigger">
+                <img src="../images/gyok.jpeg" alt="Gyok 3000" class="lightbox-trigger">
             </div>
-            <button id="prevBtn">&#8592</button>
-            <button id="nextBtn">&#8594</button>
+            <button id="prevBtn">&#8592;</button>
+            <button id="nextBtn">&#8594;</button>
         </div>
     </center>
-
-
-
 
     <h3>FAVOURITE LINKS</h3>
     <!-- Link redirects to a HIMYM short involving Marshall -->
@@ -125,39 +163,10 @@
                 <img src="../images/article.webp" alt="Hypelink on an image to an article about Man city"></a>
         </center>
     </p>
-    <script>
-        const slider = document.querySelector('.slider');
-        const images = document.querySelectorAll('.slider img');
-        const prevBtn = document.querySelector('#prevBtn');
-        const nextBtn = document.querySelector('#nextBtn');
 
-        let counter = 0;
-        const stepSize = 300; // The width of one image
 
-        nextBtn.addEventListener('click', () => {
-            // Loop back to start if at the end
-            if (counter >= images.length - 1) {
-                counter = 0;
-            } else {
-                counter++;
-            }
-            updateSlider();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            // Loop to end if at the start
-            if (counter <= 0) {
-                counter = images.length - 1;
-            } else {
-                counter--;
-            }
-            updateSlider();
-        });
-
-        function updateSlider() {
-            slider.style.transform = `translateX(${-stepSize * counter}px)`;
-        }
-    </script>
+    <button id="scrollToTopBtn" class="scroll-btn" title="Go to top">&#8593;</button>
+    <script src="../js/profile1.js"></script>
 </body>
 
 </html>

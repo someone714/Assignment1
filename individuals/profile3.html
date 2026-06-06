@@ -9,15 +9,16 @@
 <body>
 
     <!-- this is just the beginning! -->
-     <header class="header">
+    <header class="header">
         <div class="top-left">
-    <h1>Who is Beatrice?</h1>
-    </div>
+          <h1>Who is Beatrice?</h1>
+        </div>
 
-    <div class="top-right">
-        <a href="../index.html">Home</a>
-        <a href="../individuals/contact.html">Contact Us</a> 
-    </div>
+        <div class="top-right">
+            <a href="../index.html">Home</a>
+            <a href="contact.html">Contact Us</a> 
+            <button id="dark-mode-btn">Dark Mode</button><!--I added this,for the dm button-->
+        </div>
     </header>
 
 
@@ -35,18 +36,45 @@
         </p>
         </div>
 
-    <h2><b>SKILLS</b></h2>
+  <!--  <h2><b>SKILLS</b></h2>
     <ul type="disc">
         <li>Observational skills</li>
         <li>Map reading</li>
         <li>Public speaking</li>
         <li>Teamwork</li>
         <li>Empathy</li>
-    </ul>
+    </ul> !-->    
+    <h2><b>SKILLS</b></h2>
+
+<div class="skill-item">
+    <p>Observational skills</p>
+    <p class="skill-details hidden">I notice details others often miss, which helps me in problem solving and research.</p>
+</div>
+
+<div class="skill-item">
+    <p>Map reading</p>
+    <p class="skill-details hidden">I can interpret and navigate using both physical and digital maps.</p>
+</div>
+
+<div class="skill-item">
+    <p>Public speaking</p>
+    <p class="skill-details hidden">I am comfortable presenting ideas clearly in front of an audience.</p>
+</div>
+
+<div class="skill-item">
+    <p>Teamwork</p>
+    <p class="skill-details hidden">I collaborate well with others and contribute positively in group settings.</p>
+</div>
+
+<div class="skill-item">
+    <p>Empathy</p>
+    <p class="skill-details hidden">I understand and consider other people's feelings in everything I do.</p>
+</div>
  
     <!-- The educational journey ! -->
-    <table border="4" height="300" width="700">
-
+     <button id="sort-btn">Sort by Year </button>
+    <table id="edu-table" border="4" height="300" width="700"><!--the id helps js to locate the table,,(get element by id shenanigans)-->
+        <thead>
         <tr>
             <th colspan="3">EDUCATIONAL BACKGROUND </th>
         </tr>
@@ -56,40 +84,56 @@
             <th>SCHOOL</th>
             <th>YEAR</th>
         </tr>
+        </thead>
 
+        <tbody>
         <tr>
-            <td> &nbsp; &nbsp; PRIMARY SCHOOL</td>
-            <td> &nbsp; &nbsp; MOTHER TERESA PRIMARY SCHOOL</td>
-            <td> &nbsp; &nbsp; 2018</td>
+            <td>   PRIMARY SCHOOL</td>
+            <td>   MOTHER TERESA PRIMARY SCHOOL</td>
+            <td>   2018</td>
         </tr>
 
         <tr>
-            <td>&nbsp; &nbsp; O-LEVEL</td>
-            <td>&nbsp; &nbsp; FEO GIRLS SECONDARY SCHOOL</td>
-            <td>&nbsp; &nbsp; 2022</td>
+            <td>  O-LEVEL</td>
+            <td>  FEO GIRLS SECONDARY SCHOOL</td>
+            <td>  2022</td>
         </tr>
 
         <tr>
-            <td>&nbsp; &nbsp; A-LEVEL</td>
-            <td>&nbsp; &nbsp; HENRY GOGARTY SECONDARY SCHOOL</td>
-            <td>&nbsp; &nbsp; 2025</td>
+            <td>  A-LEVEL</td>
+            <td>  HENRY GOGARTY SECONDARY SCHOOL</td>
+            <td>  2025</td>
         </tr>
 
          </tr>
-            <td>&nbsp; &nbsp; UNIVERSITY EDUCATION</td>
-            <td>&nbsp; &nbsp; UNIVERSITY OF DAR ES SALAAM</td>
-            <td>&nbsp; &nbsp; 2025 - Present</td>
+            <td>  UNIVERSITY EDUCATION</td>
+            <td>  UNIVERSITY OF DAR ES SALAAM</td>
+            <td>  2026 - Present</td>
         </tr>
+        </tbody>
     </table>
 
     <!-- I had a hard time thinking of these hobbies because apparently I don't have any. -->
-    <h2><b>HOBBIES</b></h2>
+ <!--   <h2><b>HOBBIES</b></h2>
     <dl>
         <dt>Intellectual</dt>
         <dd>Her interests include developing problem solving skills through mind games like crossword puzzles and learning new programming concepts</dd>
         <dt>Social</dt>
         <dd>She enjoys travelling to new places,meeting new people and learning from diverse experiences through networking.</dd>
-    </dl>
+    </dl>-->
+
+
+<dl>
+    <dt>Intellectual</dt>
+     <dd class="hobby-text" id="hobby-1">Her interests include developing problem solving skills through mind games like crossword puzzles and learning new programming concepts. She spends hours working through logic puzzles and coding challenges, constantly pushing herself to think critically and creatively in order to find solutions to complex problems.</dd>
+    <button class="read-more-btn" data-target="hobby-1">Read More</button>
+
+    <dt>Social</dt>
+    <dd class="hobby-text" id="hobby-2">She enjoys travelling to new places, meeting new people and learning from diverse experiences through networking. Exploring different cultures and environments has broadened her perspective and helped her grow both personally and professionally, making her more adaptable and open minded in everything she does.</dd>
+    <button class="read-more-btn" data-target="hobby-2">Read More</button>
+</dl>
+
+
     <h2><b>These are her favorite links</b></h2>
     <ul type="disc">
         <li><a href="http://www.youtube.com">youtube</a></li>
@@ -98,14 +142,23 @@
         <li><a href="http://www.Neetcode.io">Neetcode</a></li>
     </ul>
 
-<img src="../images/Screenshot 2026-04-24 154015.png" width="300" height="250"/>
+<!--<img src="Screenshot 2026-04-24 154015.png" width="300" height="250"/>!-->
+
+<img src="../images/Screenshot 2026-04-24 154015.png" width="300" height="250" id="profile-img" class="clickable-img">
+
+<!-- Lightbox overlay -->
+<div id="lightbox" class="lightbox-overlay">
+    <div class="lightbox-content">
+        <button id="close-lightbox">✕ Close</button>
+        <img src="../images/Screenshot 2026-04-24 154015.png" id="lightbox-img"/>
+    </div>
+</div>
 
 </div>
 
+<script src="../js/profile3.js" defer></script>
 
-
-
-
+<button id="scroll-top-btn">Back to Top</button>
 
 </body>
 </html>

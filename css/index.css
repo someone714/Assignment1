@@ -49,7 +49,7 @@ body {
 /* Navigation */
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     gap: 30px;
     padding: 20px 0;
     background: rgba(11, 142, 178, 0.8);
@@ -60,7 +60,16 @@ nav {
     border-bottom: 1px solid var(--glass-border);
 }
 
-nav a {
+nav a{
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+nav h2 {
     color: var(--text-main);
     text-decoration: none;
     font-weight: 500;

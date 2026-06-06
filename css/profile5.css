@@ -1,12 +1,13 @@
-body{
-    color: rgba(125, 94, 94);
+body{color:(rgb(125, 94, 94));
     font-family: 'Times New Roman', Times, serif;
     font-size: large;
     --nav-h:68px;
-    margin: 30px;
-    background-image: linear-gradient(270deg,rgb(154, 116, 116), rgb(119, 169, 186),rgb(118, 155, 118),rgb(176, 176, 98));
+    margin: 0px;
+    background: linear-gradient(145deg, #d6e8f7 0%, #cce8e0 50%, #e8e5c3 100%);
     padding: 40px 20px;
+    background-attachment: fixed;
 }
+/*styling links*/
 nav {
     position: fixed;
     top: 0;
@@ -17,7 +18,8 @@ nav {
     justify-content: center;
     height:var(--nav-h); 
     background-color: rgb(8, 50, 71);
-    border-bottom: 1px solid rgb(0, 157, 255)
+    border-bottom: 1px solid rgb(0, 157, 255);
+    z-index: 1000;
 }
 nav a{
     font-family: 'Times New Roman', Times, serif;
@@ -25,19 +27,19 @@ nav a{
     font-size: small;
     letter-spacing:0.08px;
     text-transform: uppercase;
-    color: #9c07a7;
+    color: #70afca;
     text-decoration: none;
     padding: 4px 10px;
 }
 nav a:hover{
-    color: blue;
-    background-color: lightgrey
+    color: rgb(103, 134, 180);
+    background-color: rgb(38, 138, 111)
 }
+/*styling header*/
 .hero{
     display: grid;
     text-align: center;
     margin-bottom: 10px;
-    font-size: 40;
     line-height: 1.2;
     padding: 12px;
 }
@@ -52,12 +54,20 @@ nav a:hover{
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
 }
+.hero span {
+    display: inline-block;
+    text-shadow: 2px 4px 12px rgba(11,37,69,0.2);
+    transition: transform 0.35s ease;
+}
+.hero span:hover {
+    transform: scale(1.07) rotate(-1deg);
+}
 /* styling headings */
 h1{
     color: rgb(28, 33, 49);
     font-family: 'Dancing Script', cursive;
     font-weight: 700;
-    height: 60pxs;
+    height: 60px;
     margin-top: 70px;
 }
 h2{
@@ -69,18 +79,61 @@ h4{
     text-align:justify;
     font-weight: normal;
 }
-/* styling ordered list */
-ol{
-    list-style-type:upper-alpha;
-    padding: 20px;    
+/*styling bio card*/
+.bio-card {
+    border: 1px solid green;
+    border-radius:  15px;
+    padding: 20px;
+    background-color: #f0fff0;
+    margin: 15px auto;
+    max-width: 900px;
 }
+.bio-card h2 {
+    color: rgb(0, 119, 128);
+    margin-bottom: 10px;
+}
+
+.bio-card p {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.5;
+}
+.bio-card:hover { transform:  translateY(-3px);}
+/*styling skills  and hobby cards*/
 .card{
-    background:rgb(184, 169, 198);
+    background:rgba(255, 255, 255, 0.72);
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid blueviolet;
+    border: 1px solid rgb(141, 232, 162);
     margin: 20px ;
+    backdrop-filter: blur(8px);
 }
+.card:hover { transform: translateY(-3px); }
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.hobby-card {
+  border: 1px solid #c8e6c8;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #f9fff9;
+}
+.hobby-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color:rgb(0, 119, 128);
+  font-size: 15px;
+}
+.hobby-card p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.0;
+  margin: 0;
+}
+.hobby-card:hover {transform: translateY(-3px);}
 /* Table design */
 table{
     width: 60%;
@@ -92,7 +145,7 @@ table{
 }
 /* Header styling */
 th{
-    background-color: rgb(184, 169, 198);
+    background-color: rgb(145, 173, 180);
     color: rgb(21, 12, 56);
     padding: 10px;
 }
@@ -113,35 +166,37 @@ td:hover {
     background-color:yellowgreen;
     transition: 0.8s;
 }
-/* styling unordered list */
-ul{
-   list-style-type:circle;
-    padding: 20px;
-    padding-left: 50px;
+/*styling images*/
+ .images-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction:row ;
+    gap: 15px;
+    margin: 20px;
 }
- .img1-top{
-    display: inline-block;
-    gap: 10px;
-    border: 4px;
-    border-radius: 8px;
-    border-color: blueviolet;
-    border-style: solid;
-    }
-.img2-top{
-    display: inline-block;
-    gap: 10px;
-    border: 4px;
-    border-radius: 8px;
-    border-color: blueviolet;
-    border-style: solid;
-    }
+.image-card {
+    text-align: center;
+}
+
+.image-card img {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid green;
+    object-fit: cover;
+}
+.image-card p {
+    color: green;
+    font-weight: bold;
+    margin-top: 5px;
+}
     /* styling links */
 .bottom-links a{
     text-decoration: none;
     display: inline-block;
    margin: 20px;
     padding: 10px 15px;
-    background-color: blue;
+    background-color: rgb(0, 119, 128);
     color: white;
     border-radius: 6px;
     border   : 2px solid black;
@@ -155,16 +210,108 @@ ul{
     border: 5px solid lightskyblue;
     transition: 0.8s;
 }
+.hidden {
+    display: none;
+}
+/* Skills details paragraph that appears on click */
+.skills-details {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #444;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+}
+/* Pointer cursor hint on skill items so users know they're clickable */
+.skill-item {
+    cursor: pointer;
+}
+/* lightbox overlay background */
+#lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* the big image inside the lightbox */
+#lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+/* close button inside the lightbox */
+#lightbox-close {
+    margin-top: 20px;
+    padding: 10px 24px;
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* scroll to top button */
+#scroll-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* change theme button */
+#dark-mode-btn {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    padding: 8px 16px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    z-index: 1001;
+}
+/* images - pointer cursor to show they are clickable */
+img {
+    cursor: pointer;
+}
 
-    
-
-
-
-
-
-
-
-    
-    
-
-
+/* read more button in hobby cards */
+.read-btn {
+    background: none;
+    border: none;
+    color: green;
+    cursor: pointer;
+    font-weight: bold;
+}
+#blur-layer {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    z-index: 9998;
+}
+/*pop-up message styling*/
+#welcome-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:linear-gradient(#41a536,#70afca);
+    color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    z-index: 9999;
+}

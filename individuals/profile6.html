@@ -3,109 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nancy Solanus Nyimbi | Student Portfolio</title>
+    <title>Nancy Solanus Nyimbi | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/profile6.css">
+    
 </head>
 <body>
-    <div class="page-frame">
+
+    <!-- SCROLL TO TOP BUTTON (JS will show/hide this) -->
+    <button id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+    <div class="page-wrap">
+
+        <!-- HEADER -->
         <header class="hero">
-            <div class="hero-copy">
-                <p class="eyebrow">Student Portfolio</p>
-                <h1>Nancy Solanus Nyimbi</h1>
-                <p class="hero-text">Computer Science student focused on software development, innovation, and real-world solutions.</p>
+            <div class="hero-text">
+                <span class="eyebrow">Student Portfolio </span>
+                <h1>Nancy Solanus<br><em>Nyimbi</em></h1>
+                <p class="tagline">Computer Science student · University of Dar es Salaam</p>
+
+                <!-- DARK MODE TOGGLE (JS feature #6) -->
+                <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
             </div>
-            <div class="hero-image">
-                <img src="../images/Na.jpg" alt="Profile portrait of Nancy Solanus Nyimbi">
+            <div class="hero-photo">
+                <!-- LIGHTBOX trigger (JS feature #4) — clicking the image opens overlay -->
+                <img src="../images/Naah2.jpeg" alt="Nancy Solanus Nyimbi" class="lightbox-trigger" data-full="Naah2.jpeg">
             </div>
         </header>
 
         <main>
-            <section class="section-card">
+
+            <!-- BIOGRAPHY -->
+            <section class="card bio-card">
                 <h2>Biography</h2>
-                <p>Nancy Solanus Nyimbi is a Computer Science student with a strong interest in technology and software development. She is passionate about building innovative solutions to real-world problems and learning new programming concepts. Nancy is dedicated, hardworking, and committed to achieving her goals while contributing positively to the technology community.</p>
+                <p>
+                    I was born in 2005 in Karatu, Arusha Region, Tanzania a curious kid who always 
+                    wanted to know how things worked. I grew up with my parents and grandparents, 
+                    building a love for reading, learning, and pushing boundaries. Today I am pursuing 
+                    Computer Science at UDSM, turning that same curiosity into code and real world solutions.
+                </p>
             </section>
 
-            <section class="section-card grid-two">
-                <div>
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>Programming</li>
-                        <li>Problem solving</li>
-                        <li>Team collaboration</li>
-                        <li>Clear communication</li>
-                        <li>Leadership</li>
-                        <li>Creative thinking</li>
-                    </ul>
-                </div>
+            <!-- SKILLS SECTION (JS feature #1) -->
+            <!--
+                Each .skill-item is clickable.
+                The hidden .skill-details paragraph shows/hides on click.
+                JS uses classList.toggle('hidden') to do this.
+            -->
+            <section class="card">
+                <h2>Skills</h2>
+                <p class="section-hint">Click any skill to learn more ↓</p>
+                <ul class="skills-list">
 
-                <div>
-                    <h2>Education</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Level</th>
-                                <th>School</th>
-                                <th>Year</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Primary</td>
-                                <td>Tuishime Primary School</td>
-                                <td>2018</td>
-                            </tr>
-                            <tr>
-                                <td>O-Level</td>
-                                <td>Michael Secondary School</td>
-                                <td>2022</td>
-                            </tr>
-                            <tr>
-                                <td>A-Level</td>
-                                <td>Msalato Secondary School</td>
-                                <td>2025</td>
-                            </tr>
-                            <tr>
-                                <td>University</td>
-                                <td>University of Dar es Salaam</td>
-                                <td>2025 - Present</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <li class="skill-item">
+                        <span class="skill-name"> Programming</span>
+                        <p class="skill-details hidden">I write code in HTML, CSS, and JavaScript. I enjoy turning logic into working programs and solving problems step by step.</p>
+                    </li>
+
+                    <li class="skill-item">
+                        <span class="skill-name"> Problem Solving</span>
+                        <p class="skill-details hidden">I break complex challenges into smaller pieces and work through them methodically a skill sharpened through academic competitions and project work.</p>
+                    </li>
+
+                    <li class="skill-item">
+                        <span class="skill-name"> Team Collaboration</span>
+                        <p class="skill-details hidden">Working in groups during assignments has taught me how to listen, share ideas fairly, and deliver results together as a team.</p>
+                    </li>
+
+                    <li class="skill-item">
+                        <span class="skill-name"> Clear Communication</span>
+                        <p class="skill-details hidden">From debating in secondary school to presenting university projects, I have developed confidence in expressing ideas clearly and persuasively.</p>
+                    </li>
+
+                    <li class="skill-item">
+                        <span class="skill-name"> Leadership</span>
+                        <p class="skill-details hidden">I have taken the lead on group assignments and extracurricular activities, motivating teammates and keeping projects on track.</p>
+                    </li>
+
+                    <li class="skill-item">
+                        <span class="skill-name"> Creative Thinking</span>
+                        <p class="skill-details hidden">I approach every project with fresh ideas whether designing a website, writing an essay, or brainstorming solutions no one else considered.</p>
+                    </li>
+
+                </ul>
             </section>
 
-            <section class="section-card">
+            <!--  EDUCATION TABLE (JS feature #2) -->
+            <!--
+                The "Sort by Year" button re-orders the table rows.
+                JS reads the Year column value and sorts rows ascending or descending.
+                It toggles direction each time you click.
+            -->
+            <section class="card">
+                <h2>Education</h2>
+                <button id="sortBtn" class="sort-btn">Sort by Year ↕</button>
+                <table id="eduTable">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>School</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eduBody">
+                        <tr>
+                            <td>Primary</td>
+                            <td>Tuishime Primary School</td>
+                            <td>2018</td>
+                        </tr>
+                        <tr>
+                            <td>O-Level</td>
+                            <td>Michael Secondary School</td>
+                            <td>2022</td>
+                        </tr>
+                        <tr>
+                            <td>A-Level</td>
+                            <td>Msalato Secondary School</td>
+                            <td>2025</td>
+                        </tr>
+                        <tr>
+                            <td>University</td>
+                            <td>University of Dar es Salaam</td>
+                            <td>2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- HOBBIES SECTION (JS feature #3) -->
+            <!--
+                Each hobby has a .hobby-full paragraph that is cut to 2 lines by CSS.
+                The "Read More / Read Less" button removes/adds the 'clamped' CSS class.
+            -->
+            <section class="card">
                 <h2>Hobbies</h2>
-                <dl class="hobbies-list">
-                    <div class="hobby-item">
-                        <dt>Travelling</dt>
-                        <dd>Exploring new places and cultures helps me learn from different perspectives and recharge creatively.</dd>
+                <div class="hobbies-grid">
+
+                    <div class="hobby-card">
+                        <span class="hobby-icon"></span>
+                        <h3>Travelling</h3>
+                        <p class="hobby-full clamped">
+                            Exploring new places and cultures helps me learn from different perspectives and 
+                            recharge creatively. Every trip even within Tanzania teaches me something 
+                            about people, food, language, and the beautiful diversity of the world around us. 
+                            I hope to visit all of East Africa one day.
+                        </p>
+                        <button class="read-more-btn">Read More</button>
                     </div>
-                    <div class="hobby-item">
-                        <dt>Listening to Music</dt>
-                        <dd>Music helps me relax, stay focused, and find inspiration during study and project work.</dd>
+
+                    <div class="hobby-card">
+                        <span class="hobby-icon"></span>
+                        <h3>Listening to Music</h3>
+                        <p class="hobby-full clamped">
+                            Music helps me relax, stay focused, and find inspiration during study and project work. 
+                            I love Afrobeats, Bongo Flava, and R&B genres that blend rhythm, storytelling, 
+                            and emotion beautifully. Sometimes a good song is the best study partner I have.
+                        </p>
+                        <button class="read-more-btn">Read More</button>
                     </div>
-                    <div class="hobby-item">
-                        <dt>Watching Movies</dt>
-                        <dd>Movies are an engaging way to relax while discovering new ideas and storytelling techniques.</dd>
+
+                    <div class="hobby-card">
+                        <span class="hobby-icon"></span>
+                        <h3>Watching Movies</h3>
+                        <p class="hobby-full clamped">
+                            Movies are an engaging way to relax while discovering new ideas and storytelling 
+                            techniques. I especially enjoy tech thrillers and inspiring biopics about 
+                            people who changed the world. Good cinema fires up my imagination and reminds me 
+                            of the power of a welltold story.
+                        </p>
+                        <button class="read-more-btn">Read More</button>
                     </div>
-                </dl>
+
+                </div>
             </section>
 
-            <section class="section-card contact-card">
-                <h2>Contact</h2>
-                <p>If you would like to connect, feel free to reach out by email or visit one of the links below.</p>
-                <p class="contact-email"><a href="mailto:solanusnancy62@gmail.com">solanusnancy62@gmail.com</a></p>
-                <div class="contact-links">
-                    <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-                </div>
-                <div class="contact-image">
-                    <img src="../images/team.jpg" alt="Contact or team image">
+            <!-- PHOTO GALLERY (more lightbox triggers) -->
+            <section class="card">
+                <h2>Gallery</h2>
+                <p class="section-hint">Click any photo to view it full size ↓</p>
+                <div class="gallery">
+                    <img src="../images/Naah.jpeg"  alt="Nancy photo 1" class="lightbox-trigger" data-full="../images/Naah.jpeg">
+                    <img src="../images/Naah2.jpeg" alt="Nancy photo 2" class="lightbox-trigger" data-full="../images/Naah2.jpeg">
+                    <img src="../images/Naah3.jpeg" alt="Nancy photo 3" class="lightbox-trigger" data-full="../images/Naah3.jpeg">
                 </div>
             </section>
+
+            <!-- CONTACT -->
+            <section class="card contact card">
+                <h2>Contact</h2>
+                <p>we can communicate by using the email:</p>
+                <a href="mailto:solanusnancy62@gmail.com" class="email-link">solanusnancy62@gmail.com</a>
+                <!-- Social Icons -->
+<div class="social-icons">
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/255753049884" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#25D366"/>
+    </svg>
+    WhatsApp
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com/golden_medal_fave" target="_blank" rel="noopener noreferrer" class="social-btn instagram-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <defs>
+        <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#F58529"/>
+          <stop offset="50%" stop-color="#DD2A7B"/>
+          <stop offset="100%" stop-color="#8134AF"/>
+        </linearGradient>
+      </defs>
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="url(#ig)"/>
+    </svg>
+    Instagram
+  </a>
+
+</div>
+            </section>
+
         </main>
     </div>
+
+    <!-- LIGHTBOX OVERLAY (JS feature #4) -->
+    <!--
+        This overlay is hidden by default (display:none in CSS).
+        JS sets it to display:flex when an image is clicked.
+        Clicking the ✕ button or the dark backdrop closes it.
+    -->
+    <div id="lightbox" class="lightbox-overlay">
+        <button id="lightboxClose" class="lightbox-close">✕</button>
+        <img id="lightboxImg" src="" alt="Full size image">
+    </div>
+
+    <!-- Linking to the external JS -->
+    <script src="../js/profile6.js" defer></script>
+
 </body>
 </html>
